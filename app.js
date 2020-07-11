@@ -16,9 +16,7 @@ const postgresql = require('./config/database/postgresqlConfig');
 
 
 // Importing the Routes 
-const studentRoutes = require('./routes/student/studentRoutes');
-const questionRoutes = require('./routes/student/questionRoutes');
-const resultRoutes = require('./routes/student/resultRoutes');
+const questionRoutes = require('./routes/question/questionRoutes');
 
 
 
@@ -84,9 +82,7 @@ app.get('/', (req, res) => {
 })
 
 // Routes Final Calling
-app.use('/api/v1',studentRoutes);
-app.use('/api/q1', questionRoutes);
-app.use('/api/r1', resultRoutes);
+app.use('/api/v1', questionRoutes);
 
 // handle undefined Routes
 app.use('*', (req, res, next) => {
